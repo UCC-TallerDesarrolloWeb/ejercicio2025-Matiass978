@@ -7,6 +7,11 @@
  */
 
 function cambiarunidades(id, value) {
+
+    if(valor.includes(",")){
+        valor = valor.replace("," , ".");
+    }
+
     if(isNaN(value)){
         alert("se ingreso un valor invalido");
         document.lasunidades.unid_metro.value = "";
@@ -26,6 +31,11 @@ function cambiarunidades(id, value) {
         document.lasunidades.unid_pie.value = 12*value;
         document.lasunidades.unid_yarda.value = 0.33333*value;
     }
+
+    document.lasunidades.unid_metro.value = Math.round(metro*100)/100;
+    document.lasunidades.unid_pulgada.value = Math.round(pulgada*100)/100;
+    document.lasunidades.unid_pie.value = Math.round(pie*100)/100;
+    document.lasunidades.unid_yarda = Math.round(yarda*100)/100;
 }
 
 function convertirGR(id){
